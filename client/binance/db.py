@@ -6,6 +6,7 @@ import time
 from models import TokenPrices
 
 
+# Класс базы данных SQLite3, наследуемый от класса Thread
 class BinanceDbClient(Thread):
 
     def __init__(self, currency, period):
@@ -14,6 +15,7 @@ class BinanceDbClient(Thread):
         self.period = period
         self.url = f"https://api.binance.com/api/v3/avgPrice"
 
+    # Переопределение метода run() для запуска потока
     def run(self):
         while True:
             logging.info("Getting response for DATABASE")

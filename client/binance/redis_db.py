@@ -6,6 +6,7 @@ import httpx
 import time
 
 
+# Класс базы данных Redis, наследуемый от класса Thread
 class BinanceRedisClient(Thread):
 
     def __init__(self, currency, period):
@@ -16,6 +17,7 @@ class BinanceRedisClient(Thread):
         self.r = redis.Redis(host='localhost', port=6379)
         self.count = 0
 
+    # Переопределение метода run() для запуска потока
     def run(self):
         while True:
             logging.info("Getting response for REDIS")

@@ -2,6 +2,7 @@ from tortoise.models import Model
 from tortoise import fields
 
 
+# Создание модели базы данных SQLite3 с помощью tortoise-orm
 class TokenPrices(Model):
     id = fields.IntField(pk=True, unique=True)
 
